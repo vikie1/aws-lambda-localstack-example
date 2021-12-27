@@ -1,0 +1,9 @@
+version: '3.9'
+services:
+  localstack:
+    container_name: "Learning-localstack"
+    image: localstack/localstack
+    network_mode: bridge
+    ports:
+      - "4566:4566"
+
