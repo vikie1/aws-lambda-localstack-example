@@ -14,10 +14,10 @@ It returns a json in the following format:
 Below are steps to run the function locally:
 ## Step 1:
 ### Get the following requirements
-- [Java >= 11](https://www.oracle.com/java/technologies/javase-jdk-11-downloads.html) 
+- [Java >= 11](https://www.java.com/en/download/) 
 - [Gradle](https://gradle.org/install/download)
 - [Docker](https://www.docker.com/community-edition) and [Docker Compose](https://docs.docker.com/compose/install/)
-- [awslocal](https://github.com/localstack/awscli-local) You can use [aws-cli](https://aws.amazon.com/cli/) instead.
+- [awslocal](https://github.com/localstack/awscli-local).
 
 ### Set up the environment
 - clone this repository `git clone https://github.com/vikie1/aws-lambda-localstack-example.git`
@@ -30,11 +30,6 @@ Below are steps to run the function locally:
 ```
   awslocal lambda create-function --function-name learningLambdasInlocalstack --runtime java11 --handler org.example.LambdaHandler --region us-east-1 --zip-file fileb://build/libs/aws-lambda-test-1.0-uber.jar --role arn:aws:iam::12345:role/ignoreme
 ```
-if you preferred aws-cli to awslocal, you can use the following command:
-```
-aws lambda create-function --endpoint-url http://localhost:4566 --function-name learningLambdasInlocalstack --runtime java11 --handler org.example.LambdaHandler --region us-east-1 --zip-file fileb://build/libs/aws-lambda-test-1.0-uber.jar --role arn:aws:iam::12345:role/ignoreme
-``` 
-note that you have to specify the endpoint url in aws-cli.
 - You should see an output similar to the following:
 ```
 {
